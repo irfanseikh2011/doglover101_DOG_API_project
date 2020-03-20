@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dog API</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+</head>
+<body onload="addoption()">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+	<script src="scripts/script1.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<!-- <select id="dogchoice" style="width: 150px; padding: 10px 80px 80px 10px ;">
+	</select> -->
+	<div class="jumbotron">
+  <h1 class="display-4">DogLover101</h1>
+  <p class="lead">This is a simple Dog API which allows the user to fetch random Dog's picture of the selected breed.</p>
+  <hr class="my-4">
+  <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+</div>
+	<div class= "container1">
+		
+	<div class="form-group">
+    <select class="form-control" id="dogchoice">
+    </select>
+  </div>
+	<button class="btn btn-primary pl-4 pr-4" id="dog-fetch" onclick="getphoto()" style="margin:20px">Search</button><br>
+
+<div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img id="dogphoto" class="d-block w-100" alt="..." style=" background-size: cover; background-position: center;
+  background-repeat: no-repeat;">
+    </div>
+  </div>
+  <a class="carousel-control-next" onclick="getphoto()" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<hr class="my-4">
+<div class="jumbotron jumbotron-fluid container-fluid" style="min-height: 40vh;">
+  <div class="container">
+  	<br><br>
+    <h1 class="display-4">Have a Great Day.</h1>
+    <p class="lead">Dog lovers know something that no one else does: there's no purer form of love than the kind you get from your four-legged family.</p>
+    <p class="lead">Copyrights : Sk. Md Irfan</p>
+    
+  </div>
+</div>
+
+
+
+
+
+
+	<!-- <div id="imgdog" style="display: inline-block;"><img style="" id="dogphoto"></div>
+	<button class="btn btn-success mt-5 pl-5 pr-5" id="but1" onclick="getphoto()" style="margin-left: 60px ; margin-bottom: 10px;">Next</button>
+	</div> -->
+
+
+	<style>
+		@media only screen and (min-width: 1460px) {
+  		.container1 {
+  			width: 80vw; margin-left: 5vw; background-color: #fcfbf7;
+  		}
+  		#doglover {
+  			max-height: 80vh; min-height: 80vh;
+  		}	
+  		}
+
+		@media only screen and (min-width: 1200px) and (max-width: 1430px) {
+  		.container1 {
+  			width: 80vw; margin-left: 5vw; background-color: #fcfbf7;
+  		}
+  		#doglover {
+  			max-height: 80vh; min-height: 80vh;
+  		}	
+  		}
+
+		@media only screen and (min-width: 992px) and (max-width: 1200px){
+  		.container1 {
+  			width: 80vw;  margin-left: 10vw; background-color: #fcfbf7;
+  		}
+  		#doglover {
+  			max-height: 80vh; min-height: 80vh;
+  		}	
+  		}
+
+		@media only screen and (min-width: 770px) and (max-width: 992px) {
+  		.container1 {
+  			width: 80vw;  margin-left: 5vw; background-color: #fcfbf7;
+  		}
+  		#doglover {
+  			max-height: 80vh; min-height: 80vh;
+  		}	
+  		}
+
+  		@media only screen and (min-width: 581px) and (max-width: 769px){
+  		.container1 {
+  			width: 80vw;  margin-left: 10vw; background-color: #fcfbf7;
+  		}
+  		#doglover {
+  			max-height: 80vh; min-height: 80vh;
+  		}	
+  		}
+
+  		/*@media only screen and (min-width: 600px) and (max-width: 769px) {
+  		#dogphoto {
+  		height: 20vh ; width: 50vw;
+  		}
+  		.container {
+  			width: 80vw; height: 100vh; margin-left: 5vw;background-color: #fcfbf7;
+  		}		
+  		}*/
+
+  		@media only screen and (max-width: 580px) {	
+  		.container1 {
+  			width: 80vw;  margin-left: 10vw; background-color: #fcfbf7;
+  		}	
+  		#dogphoto {
+  			max-height: 40vh; min-height: 40vh; background-size: cover; background-position: center;
+  			background-repeat: no-repeat;
+  		}
+  		#doglover {
+  			max-height: 50vh; min-height: 50vh;
+  		}
+  		}
+
+
+	</style>
+</body>
+</html>
